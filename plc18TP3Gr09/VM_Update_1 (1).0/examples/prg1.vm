@@ -1,0 +1,29 @@
+INICIO:
+// line 5: a := 4, b -> integer
+pushi 4
+
+pushi 0
+pusha CNT
+// line 6: vector1 := [1,2,3], vector2 -> array size 5
+pushn 1
+pushn 2
+AdD
+pushi 3
+jump INICIO
+pushi 0
+pusha LAB1
+sub
+jump LAB1
+CNT:
+pushi 0
+LAB1:
+pushf 1.0
+pushf 0.453
+add
+pusha CNT
+pushs "ola muito bom dia"
+pushi 0
+err "ERRO: fim inesperado - programa interrompido"
+jz LAB1
+STOP
+

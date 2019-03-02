@@ -1,0 +1,92 @@
+	pushi 0
+	pushi 0
+	pushi 0
+	pushi 0
+start
+	pushi 1
+	storeg 0
+iniw1: nop
+	pushg 0
+	pushi 3
+	infeq
+	jz endw1
+	pushs "value is "
+	writes
+	pushg 0
+	writei
+	pushg 0
+	pushi 1
+	add
+	storeg 0
+	jump iniw1
+endw1: nop
+	pushi 2
+	storeg 1
+	pushg 1
+	pushi 1
+	equal
+	jz else2
+	pushs "x is equal to one.\n"
+	writes
+else2: nop
+	pushs "for comparison use == as = is the assignment operator.\n"
+	writes
+endif2: nop
+	pushs "enter a number\n"
+	writes
+	read
+	atoi
+	storeg 2
+	pushg 2
+	pushi 2
+	equal
+	jz else3
+	pushs "prime number.\n"
+	writes
+else3: nop
+	pushi 2
+	storeg 3
+inif4: nop
+	pushg 3
+	pushg 2
+	pushi 1
+	sub
+	infeq
+	jz endf4
+	jump instrf4
+ultinstr4: nop
+	pushg 3
+	pushi 1
+	add
+	storeg 3
+	jump inif4
+instrf4: nop
+	pushg 2
+	pushg 3
+	dup 1
+	pushi 0
+	equal
+	jz valid1
+	err "divisão por zero."
+	stop
+valid1: nop
+	div
+	pushi 0
+	equal
+	jz else5
+else5: nop
+endif5: nop
+	jump ultinstrf4
+endf4: nop
+	pushg 3
+	pushg 2
+	not equal
+	jz else6
+	pushs "not prime.\n"
+	writes
+else6: nop
+	pushs "prime number.\n"
+	writes
+endif6: nop
+endif3: nop
+stop

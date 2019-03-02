@@ -1,0 +1,13 @@
+start
+pushi 1
+pushi 2
+pushi 3
+pushi 4
+pushi 2
+pushi 3
+sub
+mul
+add
+mul
+add
+stop
